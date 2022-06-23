@@ -1,6 +1,6 @@
 
 
-const NewConnection = ({users, setUsers}) => {
+const NewConnection = ({users}) => {
 
   return (
     <div>
