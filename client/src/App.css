@@ -33,7 +33,7 @@
 .item-form{
   margin-top: 1em;
   margin-bottom: 1em;
-  padding: 1em 2.5em;
+  padding: 1em 2em;
 }
 .button-form{
   margin-top: .5em;
@@ -44,4 +44,23 @@
 }
 .new-connect-item{
   padding-right: 5vh;
+}
+
+.user-connections-item{
+  margin-top: .5em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  padding: 1em 2em;
+}
+.user-connections-button{
+  padding: 1em 2em;
+}
+.connections-item{
+  list-style: none;
+  border-style:solid;
+  border-color: lightslategrey;
+  border-width: 1px;
+  padding: .5em;
+  width: 20%;
+  
 }
