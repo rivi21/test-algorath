@@ -23,6 +23,7 @@ const NewConnection = ({users}) => {
           </select>
         </div>
       </div>
+      <button className="new-connect-button">Connect Both</button>
     </div>
   )
 }

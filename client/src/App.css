@@ -1,5 +1,7 @@
 .App {
-  padding-left: 4em;
+  padding: 5em;
+  display: flex;
+  justify-content: space-around;
 }
 
 .App-header {
@@ -45,22 +47,22 @@
 .new-connect-item{
   padding-right: 5vh;
 }
-
+.new-connect-button{
+  text-align: center;
+  margin-top: 3em;
+  padding: 1em 2em;
+}
 .user-connections-item{
   margin-top: .5em;
-  margin-right: 1em;
   margin-bottom: 1em;
-  padding: 1em 2em;
+  padding: 1em 1em;
 }
 .user-connections-button{
   padding: 1em 2em;
 }
 .connections-item{
-  list-style: none;
   border-style:solid;
   border-color: lightslategrey;
   border-width: 1px;
-  padding: .5em;
-  width: 20%;
-  
+  padding: .5em; 
 }

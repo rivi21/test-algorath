@@ -11,19 +11,15 @@ const UserConnections = () => {
   }
 
   return (
-    <div>
+    <div >
       <h2>User connections</h2>
-      <div className="user-connections-form">
-        <label htmlFor="user"><p>Search connections by user:</p></label>
-        <input className="user-connections-item"type="text" placeholder="user name" />
-        <input className="user-connections-button"type="button" value="Search" onClick={searchConnections} />
-      </div>
-      <div>
-        <ul classNAme="user-connections-list">
-          {connected.map(user => {
-            return <li className="connections-item" key={user.id}>{user.first_name} {user.last_name}</li>
-          })}
-        </ul>
+      <label htmlFor="user"><p>Search connections by user:</p></label>
+      <input className="user-connections-item" type="text" placeholder="user name" />
+      <input className="user-connections-button" type="button" value="Search" onClick={searchConnections} />
+      <div className="parent">
+        {connected.map(user => {
+          return <div className="connections-item" key={user.id}>{user.first_name} {user.last_name}</div>
+        })}
       </div>
     </div>
   )

@@ -20,7 +20,7 @@ function App() {
       <NewUser users={users} setUsers={setUsers}/>
       <NewConnection users={users} />
       <UserConnections />
-      <Stats />
+      <Stats users={users} />
     </div>
   );
 }
