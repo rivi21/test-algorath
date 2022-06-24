@@ -1,0 +1,20 @@
+{
+  "name": "test-algorath-server",
+  "version": "1.0.0",
+  "description": "API using express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
+  },
+  "author": "Javier Rivas",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.18"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
