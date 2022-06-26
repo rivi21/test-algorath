@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { DUMMY_URL } from "./Settings";
+import { URL_GET } from "./Settings";
 import NewConnection from './components/NewConnection';
 import NewUser from './components/NewUser';
 import Stats from './components/Stats';
@@ -7,12 +7,12 @@ import UserConnections from './components/UserConnections';
 import './App.css';
 
 function App() {
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
   
   useEffect(() => {
-    fetch(DUMMY_URL)
+    fetch(URL_GET)
       .then(response => response.json())
-      .then((data) => { setUsers(data.data) })
+      .then((data) => { setUsers(data) })
   }, [setUsers])
 
   return (

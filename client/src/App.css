@@ -47,6 +47,10 @@
 .new-connect-item{
   padding-right: 5vh;
 }
+.new-connect-item.one{
+  display: flex;
+  flex-direction: column;
+}
 .new-connect-button{
   text-align: center;
   margin-top: 3em;
@@ -65,4 +69,7 @@
   border-color: lightslategrey;
   border-width: 1px;
   padding: .5em; 
+}
+.connected{
+  background-color: rgb(60, 245, 91);    
 }
