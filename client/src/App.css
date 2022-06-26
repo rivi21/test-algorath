@@ -47,15 +47,6 @@
 .new-connect-item{
   padding-right: 5vh;
 }
-.new-connect-item.one{
-  display: flex;
-  flex-direction: column;
-}
-.new-connect-button{
-  text-align: center;
-  margin-top: 3em;
-  padding: 1em 2em;
-}
 .user-connections-item{
   margin-top: .5em;
   margin-bottom: 1em;
@@ -64,11 +55,43 @@
 .user-connections-button{
   padding: 1em 2em;
 }
+.content-select{
+  max-width: 250px;
+	position: relative;
+  padding-right: 5vh;
+}
+.content-select select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  padding: 7px 10px;
+	height: 42px;
+  outline: 0; 
+  border: 0;
+	border-radius: 0;  
+	font-size: 1em;
+	border:1px solid #1f1f1f33;
+  border-radius: 6px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+ 
+.content-select select:hover{
+  background-color: lightslategrey;
+  color: aliceblue;
+  cursor: pointer;
+}
+
 .connections-item{
   border-style:solid;
   border-color: lightslategrey;
   border-width: 1px;
   padding: .5em; 
+}
+.connections-item:hover{
+  background-color: lightslategrey;
+  color: aliceblue;
+  cursor: pointer;
 }
 .connected{
   background-color: rgb(60, 245, 91);    

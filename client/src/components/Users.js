@@ -1,44 +1,28 @@
 import { useState } from "react"
-import { URL_GET_CONNECTIONS, URL_POST_CONNECTIONS } from "../Settings";
 import ConnectTo from "./ConnectTo";
 import SelectUser from "./SelectUser";
 import ConnectedWith from "./ConnectedWith";
+import { URL_GET_CONNECTIONS } from "../Settings";
 
 const Users = ({ users }) => {
 
   const [rest, setRest] = useState([]);
   const [selectedUserId, setSelectedUserId] = useState(0);
+  const [connectedUsers, setConnectedUsers] = useState([]);
   const [connectedUsersIds, setConnectedUsersIds] = useState([]);
+  
+  const usersCopy = [...users];
 
-  const handleUser = (e) => {
-    const userId = e.target.value;
-    const usersCopy = [...users];
+  const handleUser = async(e) => {
+    const userId = e.target.value;  
     setRest(usersCopy.filter((user) => user.id != userId));
     setSelectedUserId(userId);
-  }
-
-  const getConnected = async (userToConnectId) => {
-    await fetch(`${URL_GET_CONNECTIONS} ${selectedUserId}`)
-      .then(res => res.json())
-      .then(data => {
-        setConnectedUsersIds(data.map(user => user.id))
-      });
-    if (connectedUsersIds.includes(userToConnectId)) {
-      alert("Both users are already connected")
-    } else {
-      await fetch(URL_POST_CONNECTIONS, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          userId: selectedUserId,
-          connectedId: userToConnectId
-        })
-      })
-        .then(response => response.json())
-        .then(data => console.log(data))/* REFACTORIZAR ESTO */
-    }
+    await fetch(`${URL_GET_CONNECTIONS} ${userId}`)
+            .then(res => res.json())
+            .then(data => {
+                setConnectedUsersIds(data.map(user => user.id))
+                setConnectedUsers(data)
+            });
   }
 
   return (
@@ -46,8 +30,8 @@ const Users = ({ users }) => {
       <h2>User Connections</h2>
       <div className="new-connect-container">
         <SelectUser users={users} handleUser={handleUser} />
-        <ConnectTo rest={rest} getConnected={getConnected} />
-        <ConnectedWith users={users} />
+        <ConnectTo rest={rest} selectedUserId={selectedUserId} connectedUsersIds={connectedUsersIds} />
+        <ConnectedWith connectedUsers={connectedUsers} />
       </div>
     </div>
   )

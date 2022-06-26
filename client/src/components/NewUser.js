@@ -27,7 +27,6 @@ const NewUser = ({ setUsers }) => {
         .then((data) => setUsers(data))
       setFirstName("");
       setLastName("");
-      /* setUsers(users.push) */
     }
   }
 

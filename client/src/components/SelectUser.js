@@ -1,10 +1,9 @@
 
-
 const SelectUser = ({ users, handleUser }) => {
     return (
-        <div className="new-connect-item one">
+        <div className="content-select">
             <label htmlFor="users"><h3>Choose User: </h3></label>
-            <select name="users" id="users" onChange={(e) => handleUser(e)}>
+            <select className="content-select select"name="users" id="users" onChange={(e) => handleUser(e)}>
                 <option value="">--Please choose an option--</option>
                 {users.map((user) => {
                     return (

@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <NewUser users={users} setUsers={setUsers} />
+      <NewUser setUsers={setUsers} />
       <Users users={users} />
       <Stats users={users} />
     </div>
