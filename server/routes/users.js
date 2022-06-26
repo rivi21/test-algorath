@@ -34,7 +34,7 @@ app.get("/users/:id", (req, res) => {
 app.post("/users", (req, res) => {
     const body = req.body;
     if (!body.first_name || !body.last_name) {
-        res.status(400).json({ ok: false, message: "first and last names are required" })
+        res.status(400).json({ ok: false, message: "first and last names are required" });
     } else {
         connection.query("INSERT INTO users(first_name,last_name) VALUES (?,?)",
             [body.first_name, body.last_name],
@@ -42,15 +42,12 @@ app.post("/users", (req, res) => {
                 if (error) {
                     throw error;
                 }
-                res.status(201).json({
-                    id: results.insertId,
-                    first_name: body.first_name,
-                    last_name: body.last_name
-                });
-            });
+                res.status(201).json({ ok: true, user: body });
+            }
+        );
     }
-
 });
+
 //Route for New Connection
 app.post("/connections", (req, res) => {
     const body = req.body;
